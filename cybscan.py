@@ -92,7 +92,8 @@ class cybscan():
                 if self.grab_plugin() == None:
                     print('{} [-]Unable to find more plugins{}'.format(r,e))
                 print(y + '---------------------------------------' + res)
-                usr_choice = input(y + '    [!]' + w + 'Do you want to enumerate all usernames :' + y + '[Y/n]' + e)
+                # usr_choice = input(y + '    [!]' + w + 'Do you want to enumerate all usernames :' + y + '[Y/n]' + e)
+                usr_choice = 'n'
                 if usr_choice == 'n' or usr_choice == 'N':
                     print('{} [!]Username Enumeration Canceled{}'.format(y,e))
                     pass
@@ -345,7 +346,8 @@ class cybscan():
         data = page.text
         try:
             soup = BeautifulSoup(data,"lxml")
-            choice = input('{} [?]Do you want to save the retrieved links[Y/n]{}'.format(y,e))
+            # choice = input('{} [?]Do you want to save the retrieved links[Y/n]{}'.format(y,e))
+            choice = 'n'
             if choice == 'n' or choice == 'N':
                 for link in soup.find_all('a'):
                     if 'javascript:void' in str(link.get('href')):
